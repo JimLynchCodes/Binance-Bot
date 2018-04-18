@@ -8,20 +8,48 @@
 
 const axios = require('axios');
 const errorResponse = {'error': 'Please pass query parameter "character" with a value 0 - 10.'};
-const creds = require('./../.creds');
+// const creds = require('./../.creds');
 const binance = require('node-binance-api');
+const AWS = require('aws-sdk');
+const encrypted = process.env['b_key'];
 
 
 class JimsBinanceFunctions {
 
   constructor(symbols) {
 
-    binance.options({
-      APIKEY: '<key>',
-      APISECRET: '<secret>',
-      useServerTime: true, // If you get timestamp errors, synchronize to server time at startup
-      test: true // If you want to use sandbox mode where orders are simulated
-    });
+    let decrypted;
+
+
+    function processEvent(event, context, callback) {
+      // TODO handle the event here
+    }
+
+    // exports.handler = (event, context, callback) => {
+      if (decrypted) {
+        processEvent(event, context, callback);
+      } else {
+        // Decrypt code should run once and variables stored outside of the function
+        // handler so that these are decrypted once per container
+        const kms = new AWS.KMS();
+        kms.decrypt({ CiphertextBlob: new Buffer(encrypted, 'base64') }, (err, data) => {
+          if (err) {
+            console.log('Decrypt error:', err);
+            return callback(err);
+          }
+          decrypted = data.Plaintext.toString('ascii');
+          processEvent(event, context, callback);
+
+          console.log('got decrypted stuff!')
+        });
+      }
+    // };
+    // binance.options({
+    //   APIKEY: '<key>',
+    //   APISECRET: '<secret>',
+    //   useServerTime: true, // If you get timestamp errors, synchronize to server time at startup
+    //   test: true // If you want to use sandbox mode where orders are simulated
+    // });
 
     this.axios = axios;
   }
