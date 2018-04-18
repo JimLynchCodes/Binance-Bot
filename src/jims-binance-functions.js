@@ -58,7 +58,7 @@ class JimsBinanceFunctions {
       //   });
 
 
-      resolve('some stuff');
+      resolve({'some stuff': 'thingies'});
 
     })
   }

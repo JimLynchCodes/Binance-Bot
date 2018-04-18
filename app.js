@@ -3,7 +3,6 @@ const app = express();
 const JimsBinanceFunctions = require('./src/jims-binance-functions');
 app.jimsBinanceBot = new JimsBinanceFunctions();
 
-app.get('/', app.getHandler);
 
 
 app.getHandler = function (req, res) {
@@ -24,6 +23,8 @@ app.getHandler = function (req, res) {
   });
 
   return app.jimsBinanceBot.hello().then(binanceData => {
+
+    console.log('b dat is: ' + binanceData);
     res.send(binanceData);
   }, err => {
     res.send(err);
@@ -32,6 +33,7 @@ app.getHandler = function (req, res) {
 
 }
 
+app.get('/', app.getHandler);
 
 app.post('/', function (req, res) {
   res.send({
