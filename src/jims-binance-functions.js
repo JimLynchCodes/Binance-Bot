@@ -11,7 +11,6 @@ const errorResponse = {'error': 'Please pass query parameter "character" with a 
 // const creds = require('./../.creds');
 const binance = require('node-binance-api');
 const AWS = require('aws-sdk');
-const encrypted = process.env['b_key'];
 
 
 class JimsBinanceFunctions {
@@ -25,53 +24,76 @@ class JimsBinanceFunctions {
       // TODO handle the event here
     }
 
+
     // exports.handler = (event, context, callback) => {
-      if (decrypted) {
-        processEvent(event, context, callback);
-      } else {
-        // Decrypt code should run once and variables stored outside of the function
-        // handler so that these are decrypted once per container
-        const kms = new AWS.KMS();
-        kms.decrypt({ CiphertextBlob: new Buffer(encrypted, 'base64') }, (err, data) => {
-          if (err) {
-            console.log('Decrypt error:', err);
-            return callback(err);
-          }
-          decrypted = data.Plaintext.toString('ascii');
-          processEvent(event, context, callback);
+    if (decrypted) {
+      processEvent(event, context, callback);
+    } else {
+      // Decrypt code should run once and variables stored outside of the function
+      const encrypted = process.env['b_key'];
 
-          console.log('got decrypted stuff!')
-        });
-      }
-    // };
-    // binance.options({
-    //   APIKEY: '<key>',
-    //   APISECRET: '<secret>',
-    //   useServerTime: true, // If you get timestamp errors, synchronize to server time at startup
-    //   test: true // If you want to use sandbox mode where orders are simulated
-    // });
+      AWS.config = new AWS.Config({
+         region: 'us-east-1'
+      });
 
-    this.axios = axios;
+      console.log('encrypted is: ' + encrypted);
+      // handler so that these are decrypted once per container
+      const kms = new AWS.KMS();
+      var params = {
+        CiphertextBlob: new Buffer(encrypted, 'base64')// The encrypted data (ciphertext).
+      };
+      kms.decrypt(params, function(err, data) {
+        if (err) console.log(err); // an error occurred
+        else     console.log(data);           // successful response
+      });
+      /*
+       data = {
+       KeyId: "arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab", // The Amazon Resource Name (ARN) of the CMK that was used to decrypt the data.
+       Plaintext: <Binary String>// The decrypted (plaintext) data.
+       }
+
+       kms.decrypt( new Buffer(encrypted, 'base64') , (err, data) => {
+       if (err) {
+       console.log('Decrypt error:', err);
+       return callback(err);
+       }
+       decrypted = data.Plaintext.toString('ascii');
+       processEvent(event, context, callback);
+
+       console.log('got decrypted stuff!')
+       });
+       }
+       // };
+       // binance.options({
+       //   APIKEY: '<key>',
+       //   APISECRET: '<secret>',
+       //   useServerTime: true, // If you get timestamp errors, synchronize to server time at startup
+       //   test: true // If you want to use sandbox mode where orders are simulated
+       // });
+
+       this.axios = axios;
+       }
+
+       /**
+       *
+       *  Pass in a number 1-10 representing a star wars character.
+       *  return hair_color and eye color of that character.
+       *
+       *  @param number
+       *  @returns {Promise}
+       *
+       *    @resolves {
+       *      name: String
+       *      hairColor: String,
+       *      eyeColor: String,
+       *    }
+       *
+       *    @rejects {
+       *      msg: string
+       *    }
+       */
+    }
   }
-
-  /**
-   *
-   *  Pass in a number 1-10 representing a star wars character.
-   *  return hair_color and eye color of that character.
-   *
-   *  @param number
-   *  @returns {Promise}
-   *
-   *    @resolves {
-   *      name: String
-   *      hairColor: String,
-   *      eyeColor: String,
-   *    }
-   *
-   *    @rejects {
-   *      msg: string
-   *    }
-   */
 
   hello() {
     return new Promise((resolve, reject) => {
