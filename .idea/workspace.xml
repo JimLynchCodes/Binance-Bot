@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="dab5599c-674d-45f7-a73a-c76fe98ff8b4" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jims-binance-functions.js" afterPath="$PROJECT_DIR$/src/jims-binance-functions.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template.yml" afterPath="$PROJECT_DIR$/template.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/jims-binance-functions.integration.test.js" afterPath="$PROJECT_DIR$/tests/jims-binance-functions.integration.test.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -58,11 +56,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="jims-binance-functions.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="jims-binance-functions.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/jims-binance-functions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="236" column="30" lean-forward="false" selection-start-line="236" selection-start-column="30" selection-end-line="236" selection-end-column="30" />
+            <state relative-caret-position="170">
+              <caret line="234" column="9" lean-forward="false" selection-start-line="234" selection-start-column="9" selection-end-line="234" selection-end-column="9" />
               <folding>
                 <element signature="n#!!block;n#getBidAskPrices#0;n#JimsBinanceFunctions#0" expanded="false" />
               </folding>
@@ -102,7 +100,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="template.yml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="template.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/template.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="353">
@@ -162,8 +160,8 @@
         <option value="$PROJECT_DIR$/index.js" />
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/tests/jims-binance-functions.integration.test.js" />
-        <option value="$PROJECT_DIR$/src/jims-binance-functions.js" />
         <option value="$PROJECT_DIR$/template.yml" />
+        <option value="$PROJECT_DIR$/src/jims-binance-functions.js" />
       </list>
     </option>
   </component>
@@ -336,12 +334,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1524017342836</updated>
-      <workItem from="1524017355382" duration="30531000" />
+      <workItem from="1524017355382" duration="30668000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30531000" />
+    <option name="totallyTimeSpent" value="30668000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="210" y="23" width="1470" height="958" extended-state="0" />
@@ -488,16 +486,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/jims-binance-functions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="236" column="30" lean-forward="false" selection-start-line="236" selection-start-column="30" selection-end-line="236" selection-end-column="30" />
-          <folding>
-            <element signature="n#!!block;n#getBidAskPrices#0;n#JimsBinanceFunctions#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/serverless.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -511,6 +499,16 @@
         <state relative-caret-position="353">
           <caret line="22" column="17" lean-forward="false" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jims-binance-functions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="234" column="9" lean-forward="false" selection-start-line="234" selection-start-column="9" selection-end-line="234" selection-end-column="9" />
+          <folding>
+            <element signature="n#!!block;n#getBidAskPrices#0;n#JimsBinanceFunctions#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
