@@ -115,9 +115,11 @@ class JimsBinanceFunctions {
   }
 
   hello() {
+
+    console.log('saying hello')
     return new Promise((resolve, reject) => {
 
-      console.log('credskey is ' + creds.key);
+      console.log('credskey is ');
 
       // const intNumber = parseInt(number);
       //

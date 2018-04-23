@@ -16,9 +16,14 @@ app.getHandler = function (req, res) {
     app.lambdaParams = Object.assign({}, app.lambdaParams, req.apiGateway.event)
   }
 
+
+  console.log('gateway is: ', req.apiGateway);
+
   if (req.query) {
     app.lambdaParams = Object.assign({}, app.lambdaParams, req.query)
   }
+
+  console.log('query is: ', req.query);
 
   res.set({
     'Content-Type': 'application/json',
