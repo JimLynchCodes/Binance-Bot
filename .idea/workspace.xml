@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dab5599c-674d-45f7-a73a-c76fe98ff8b4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jims-binance-functions.js" afterPath="$PROJECT_DIR$/src/jims-binance-functions.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -47,16 +47,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".babelrc" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.babelrc">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="1" lean-forward="false" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="jims-binance-functions.integration.test.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/jims-binance-functions.integration.test.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -67,13 +57,35 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="jims-binance-functions.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="jims-binance-functions.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/jims-binance-functions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="121" column="32" lean-forward="false" selection-start-line="121" selection-start-column="32" selection-end-line="121" selection-end-column="32" />
+            <state relative-caret-position="227">
+              <caret line="119" column="45" lean-forward="false" selection-start-line="119" selection-start-column="45" selection-end-line="119" selection-end-column="45" />
               <folding>
                 <element signature="n#!!block;n#getBidAskPrices#0;n#JimsBinanceFunctions#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="serverless.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/serverless.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="35" column="25" lean-forward="false" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="20" column="5" lean-forward="false" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="25" />
+              <folding>
+                <marker date="1524485682000" expanded="true" signature="524:527" ph="{&quot;test&quot;: &quot;mocha --recursive tests&quot;...}" />
               </folding>
             </state>
           </provider>
@@ -89,24 +101,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="16" column="7" lean-forward="false" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
-              <folding>
-                <marker date="1524447264000" expanded="true" signature="316:466" ph="{&quot;chai&quot;: &quot;^4.1.2&quot;...}" />
-                <marker date="1524447264000" expanded="true" signature="521:524" ph="{&quot;test&quot;: &quot;mocha --recursive tests&quot;...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="template.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/template.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="425">
-              <caret line="25" column="21" lean-forward="true" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
+              <caret line="25" column="21" lean-forward="false" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -116,7 +115,7 @@
         <entry file="file://$PROJECT_DIR$/template.staging.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="323">
-              <caret line="19" column="11" lean-forward="true" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
+              <caret line="19" column="11" lean-forward="false" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -154,7 +153,6 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/tests/test.js" />
         <option value="$PROJECT_DIR$/tests/jims-binance-functions.integration.test.js" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/buildspec.yml" />
         <option value="$PROJECT_DIR$/.babelrc" />
         <option value="$PROJECT_DIR$/template.staging.yml" />
@@ -162,6 +160,9 @@
         <option value="$PROJECT_DIR$/index.js" />
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/src/jims-binance-functions.js" />
+        <option value="$PROJECT_DIR$/sererless.yml" />
+        <option value="$PROJECT_DIR$/serverless.yml" />
+        <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
   </component>
@@ -334,12 +335,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1524017342836</updated>
-      <workItem from="1524017355382" duration="23282000" />
+      <workItem from="1524017355382" duration="23841000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23282000" />
+    <option name="totallyTimeSpent" value="23841000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="72" y="56" width="1591" height="944" extended-state="0" />
@@ -412,17 +413,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="16" column="7" lean-forward="false" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
-          <folding>
-            <marker date="1524447264000" expanded="true" signature="316:466" ph="{&quot;chai&quot;: &quot;^4.1.2&quot;...}" />
-            <marker date="1524447264000" expanded="true" signature="521:524" ph="{&quot;test&quot;: &quot;mocha --recursive tests&quot;...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.babelrc">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -442,7 +432,7 @@
     <entry file="file://$PROJECT_DIR$/template.staging.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
-          <caret line="19" column="11" lean-forward="true" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
+          <caret line="19" column="11" lean-forward="false" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
           <folding />
         </state>
       </provider>
@@ -458,7 +448,7 @@
     <entry file="file://$PROJECT_DIR$/template.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
-          <caret line="25" column="21" lean-forward="true" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
+          <caret line="25" column="21" lean-forward="false" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
           <folding />
         </state>
       </provider>
@@ -487,12 +477,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/sererless.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="33" lean-forward="true" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/jims-binance-functions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="121" column="32" lean-forward="false" selection-start-line="121" selection-start-column="32" selection-end-line="121" selection-end-column="32" />
+        <state relative-caret-position="227">
+          <caret line="119" column="45" lean-forward="false" selection-start-line="119" selection-start-column="45" selection-end-line="119" selection-end-column="45" />
           <folding>
             <element signature="n#!!block;n#getBidAskPrices#0;n#JimsBinanceFunctions#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/serverless.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="35" column="25" lean-forward="false" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="5" lean-forward="false" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="25" />
+          <folding>
+            <marker date="1524485682000" expanded="true" signature="524:527" ph="{&quot;test&quot;: &quot;mocha --recursive tests&quot;...}" />
           </folding>
         </state>
       </provider>
