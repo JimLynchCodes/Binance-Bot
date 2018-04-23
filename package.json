@@ -11,6 +11,8 @@
     "node-binance-api": "^0.4.28"
   },
   "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-cli": "^6.26.0",
     "chai": "^4.1.2",
     "mocha": "5.0.0",
     "supertest": "3.0.0",
