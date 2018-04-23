@@ -18,6 +18,12 @@ Parameters:
       Description: AWS CodeStar projectID used to associate new resources to team members
 
 Resources:
+  LambdaVersion:
+      Type: "AWS::Lambda::Version"
+      Properties:
+        CodeSha256 : String
+        Description : String
+        FunctionName : String
   HelloWorld:
     Type: AWS::Serverless::Function
     Properties:
@@ -40,3 +46,4 @@ Resources:
           Properties:
             Path: /
             Method: post
+
