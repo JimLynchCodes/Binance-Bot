@@ -16,6 +16,10 @@ Parameters:
   Publish:
       Type: String
       Description: AWS CodeStar projectID used to associate new resources to team members
+  Nonce:
+      Description: Change this string when code is updated.
+      Type: String
+      Default: "Test"
 
 Resources:
   LambdaVersion:
