@@ -22,14 +22,19 @@ Parameters:
       Default: "Test"
 
 Resources:
+  MyCustomResource:
+     Type: Custom::Resource
+     Properties:
+       ServiceToken: !GetAtt MyFunction.Arn
+       Nonce: !Ref Nonce
   LambdaVersion:
       Type: "AWS::Lambda::Version"
       Properties:
         FunctionName : arn:aws:lambda:us-east-1:954459734159:function:awscodestar-binance-bot-lambda-HelloWorld-16Q9TC43G164R
   HelloWorld:
     Type: AWS::Serverless::Function
+    Description: Nonce
     Properties:
-      Nonce: !Ref Nonce
       Handler: index.handler
       Runtime: nodejs8.10
       Environment:
