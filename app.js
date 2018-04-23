@@ -3,9 +3,12 @@ const app = express();
 const JimsBinanceFunctions = require('./src/jims-binance-functions');
 app.jimsBinanceBot = new JimsBinanceFunctions();
 
+console.log('in app!');
 
 
 app.getHandler = function (req, res) {
+
+  console.log('in get handler');
 
   app.lambdaParams = {};
 
