@@ -7,6 +7,15 @@ Parameters:
   ProjectId:
     Type: String
     Description: AWS CodeStar projectID used to associate new resources to team members
+  Environment:
+      Type: String
+      Description: AWS CodeStar projectID used to associate new resources to team members
+  publish:
+      Type: String
+      Description: AWS CodeStar projectID used to associate new resources to team members
+  Publish:
+      Type: String
+      Description: AWS CodeStar projectID used to associate new resources to team members
 
 Resources:
   HelloWorld:
