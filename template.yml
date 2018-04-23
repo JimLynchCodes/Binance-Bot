@@ -25,6 +25,7 @@ Resources:
   HelloWorld:
     Type: AWS::Serverless::Function
     Properties:
+      Nonce: !Ref Nonce
       Handler: index.handler
       Runtime: nodejs8.10
       Environment:
