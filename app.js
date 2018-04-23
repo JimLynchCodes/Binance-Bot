@@ -8,7 +8,7 @@ console.log('in app!');
 
 app.getHandler = function (req, res) {
 
-  console.log('in get handler');
+  console.log('in get handlerrrr');
 
   app.lambdaParams = {};
 
