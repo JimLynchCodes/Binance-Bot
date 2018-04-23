@@ -225,6 +225,51 @@ class JimsBinanceFunctions {
     })
   };
 
+
+  getPrevDayData(tickerName) {
+
+    console.log('getting candles...')
+    return new Promise((resolve, reject) => {
+
+
+
+      // Intervals: 1m,3m,5m,15m,30m,1h,2h,4h,6h,8h,12h,1d,3d,1w,1M
+      return binance.prevDay("BNBBTC", (error, ticks, symbol) => {
+        console.log("prev day", error);
+        console.log("prev day", symbol);
+        console.log("prev day", ticks);
+        let last_tick = ticks[ticks.length - 1];
+        let [time, open, high, low, close, volume, closeTime, assetVolume, trades, buyBaseVolume, buyAssetVolume, ignored] = last_tick;
+        console.log(symbol + " last close: " + close);
+
+
+        console.log(ticks.length)
+
+        ticks.forEach(tick => {
+
+          let [time, open, high, low, close, volume, closeTime, assetVolume, trades, buyBaseVolume, buyAssetVolume, ignored] = tick;
+
+          let d = new Date(time);
+          console.log('open time is : ', d.toString());
+
+        })
+
+      }, {limit: 5, endTime: (new Date()).getTime()});
+      // return binance.candlesticks('BNBBTC', "5m", (error, ticks, symbol) => {
+      // console.log("Candles of candles: (" + tickerName + "): " + ticker[tickerName]);
+
+
+      // console.log('got candles: ', ticks);
+      // console.log('got candles: ', error);
+      // console.log('got candles: ', symbol);
+      // console.log('got candles: ', ticks[0][0]);
+
+
+      resolve(ticks[98][0]);
+
+      // })
+    })
+  }
   /**
    *
    * takes a ticker and returns a promise that resolves to the data around that ticker.
