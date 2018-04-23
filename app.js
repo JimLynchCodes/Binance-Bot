@@ -25,6 +25,8 @@ app.getHandler = function (req, res) {
 
   console.log('query is: ', req.query);
 
+  console.log('process.env is: ', process.env);
+
   res.set({
     'Content-Type': 'application/json',
     'charset': 'utf-8'
