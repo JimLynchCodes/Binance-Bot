@@ -105,6 +105,14 @@ class JimsBinanceFunctions {
   }
 
 
+  getWeightedAvgVolFromCandles(candles) {
+    return 42;
+  }
+
+  getPriceChangeFromCandles(candles) {
+    return 42;
+  }
+
   getRecommendation(ticker) {
     return Promise.all([
       jimsBinanceBot.getPrevDayData(ticker),
@@ -125,20 +133,25 @@ class JimsBinanceFunctions {
 
       recommendationObj['ticker'] = ticker;
 
+      let volPast1Min = this.getWeightedAvgVolFromCandles(candles1Min);
+      let volPast5Min = this.getWeightedAvgVolFromCandles(candles5Min);
+      let priceChangePast1Min = this.getPriceChangeFromCandles(candles1Min);
+      let priceChangePast5Min = this.getPriceChangeFromCandles(candles5Min);
+
       recommendationObj.volume = {
-        volumePastOneminute: 24,
-        volumePastFiveminute: 24,
+        volumePastOneMinute: volPast1Min,
+        volumePastFiveMinute: volPast5Min,
         volumePastOneday: prevDayData.volume,
-        normalizedVolumePastOneminute: 24,
-        normalizedVolumePastFiveminute: 24,
-        normalizedVolumePastOneday: 24
+        normalizedVolumePastOneMinute: volPast1Min,
+        normalizedVolumePastFiveMinute: volPast5Min / 5,
+        normalizedVolumePastOneday: prevDayData.volume / 24 / 60
       };
 
       recommendationObj.price = {
-        priceChangePastOneminute: 24,
-        priceChangePastFiveminute: 24,
-        normalizedPriceChangePastOneminute: 24,
-        normalizedPriceChangePastFiveminute: 24,
+        priceChangePastOneMinute: priceChangePast1Min,
+        priceChangePastFiveMinute: priceChangePast5Min,
+        normalizedPriceChangePastOneMinute: priceChangePast1Min,
+        normalizedPriceChangePastFiveMinute: priceChangePast5Min / 5,
         weightedAvgPrice24hr: prevDayData.weightedAvgPrice
       };
 
@@ -146,9 +159,12 @@ class JimsBinanceFunctions {
       recommendationObj.reccomendation = {
         toBuyOrNotToBuy: "Don\'t Buy",
         volumeHeatRating: "Hot",
-        volumeRatio1minTo1day: 24.2,
-        volumeRatio5minTo1day: 24.2,
-        volumeRatio1minTo5min: 24.2,
+        volumeRatio1minTo1day: recommendationObj.volume.normalizedVolumePastOneMinute /
+                               recommendationObj.volume.normalizedVolumePastOneDay,
+        volumeRatio5minTo1day: recommendationObj.volume.normalizedVolumePastFiveMinute /
+                               recommendationObj.volume.normalizedVolumePastOneDay,
+        volumeRatio1minTo5min: recommendationObj.volume.normalizedVolumePastOneMinute /
+                               recommendationObj.volume.normalizedVolumePastFiveMinute,
       }
 
 

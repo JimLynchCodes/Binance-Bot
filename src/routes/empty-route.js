@@ -24,7 +24,7 @@ module.exports = function (req, res) {
 
   console.log('in the empty route!');
 
-  // this.jimsBinanceBot = new JimsBinanceFunctions();
+  this.jimsBinanceBot = new JimsBinanceFunctions();
 
   // console.log('jimsBinanceBot', jimsBinanceBot);
   this.lambdaParams = readEnvVariables(req);
@@ -35,13 +35,13 @@ module.exports = function (req, res) {
     'charset': 'utf-8'
   });
 
-  console.log('getting reccommendation...');
+  console.log('getting recommendation...');
 
   // this.jimsBinanceBot.getRecommendation('BNBBTC').then(recommendation => {
   //       console.log('got recommendation');
   //       res.json(recommendation);
   //     });
-      // res.send({message: 'hey'});
+      res.send({message: 'hey'});
 
 
 
