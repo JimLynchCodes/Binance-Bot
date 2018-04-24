@@ -8,22 +8,18 @@
 
 const axios = require('axios');
 const errorResponse = {'error': 'Please pass query parameter "character" with a value 0 - 10.'};
-// const creds = require('./../.creds');
 const binance = require('node-binance-api');
-// const AWS = require('aws-sdk');
 const AWS = require('aws-sdk');
+const jimsBinanceFunctions = require('./../src/jims-binance-functions');
 
 
 class JimsBinanceFunctions {
 
   constructor() {
 
-
-
     AWS.config.update({region: 'us-east-1'});
-    // const encrypted = process.env['b_key'];
 
-    console.log('in binance bot constructor', AWS)
+    console.log('in binance bot constructor', jimsBinanceFunctions)
 
     binance.options({
       APIKEY: '<key>',
@@ -59,22 +55,6 @@ class JimsBinanceFunctions {
       return binance.candlesticks(tickerName, timeInterval, (error, ticks, symbol) => {
         console.log("candlesticks()", ticks);
         return resolve(ticks)
-        // let last_tick = ticks[ticks.length - 1];
-        // let [time, open, high, low, close, volume, closeTime, assetVolume, trades, buyBaseVolume, buyAssetVolume, ignored] = last_tick;
-        // console.log(symbol + " last close: " + close);
-
-
-        // console.log(ticks.length)
-
-        // ticks.forEach(tick => {
-
-          // let [time, open, high, low, close, volume, closeTime, assetVolume, trades, buyBaseVolume, buyAssetVolume, ignored] = tick;
-
-          // let d = new Date(time);
-          // console.log('open time is : ', d.toString());
-        //
-        // })
-
       }, {limit: 50, endTime: (new Date()).getTime()});
     })
   };
@@ -84,7 +64,7 @@ class JimsBinanceFunctions {
     return new Promise((resolve, reject) => {
       return binance.prevDay(tickerName, (error, data) => {
         if (error) {
-          return resolve(error)
+          return reject(error)
         }
         return resolve(data);
       });
@@ -107,6 +87,10 @@ class JimsBinanceFunctions {
 
 
   getWeightedAvgVolFromCandles(candles) {
+
+
+    console.log('length of candles is: ', candles.length);
+
     return 42;
   }
 
@@ -116,17 +100,17 @@ class JimsBinanceFunctions {
 
   getRecommendation(ticker) {
     return Promise.all([
-      jimsBinanceBot.getPrevDayData(ticker),
-      jimsBinanceBot.getCandles(ticker, "1m"),
-      jimsBinanceBot.getCandles(ticker, "5m")
-    ]).then(function (values) {
+      this.getPrevDayData(ticker),
+      this.getCandles(ticker, "1m"),
+      this.getCandles(ticker, "5m")
+    ]).then( (values) => {
 
 
       let prevDayData = values[0];
       let candles1Min = values[1];
       let candles5Min = values[2];
 
-      console.log(prevDayData);
+      console.log(typeof prevDayData);
       console.log('oh yeah');
 
 

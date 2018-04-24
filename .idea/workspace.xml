@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dab5599c-674d-45f7-a73a-c76fe98ff8b4" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.serverless/binance-bot-impatient-deploy.zip" afterPath="$PROJECT_DIR$/.serverless/binance-bot-impatient-deploy.zip" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.serverless/cloudformation-template-update-stack.json" afterPath="$PROJECT_DIR$/.serverless/cloudformation-template-update-stack.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.serverless/serverless-state.json" afterPath="$PROJECT_DIR$/.serverless/serverless-state.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jims-binance-functions.js" afterPath="$PROJECT_DIR$/src/jims-binance-functions.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/routes/empty-route.js" afterPath="$PROJECT_DIR$/src/routes/empty-route.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/jims-binance-functions.integration.test.js" afterPath="$PROJECT_DIR$/tests/jims-binance-functions.integration.test.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,7 +28,7 @@
     <favorites_list name="Binance-Bot" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.58976585">
+    <splitter split-orientation="horizontal" split-proportion="0.53016895">
       <split-first>
         <leaf>
           <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
@@ -59,11 +64,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="empty-route.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="empty-route.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/routes/empty-route.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="459">
-                  <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+                <state relative-caret-position="357">
+                  <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -79,25 +84,12 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="jims-binance-functions.integration.test.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="jims-binance-functions.integration.test.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/tests/jims-binance-functions.integration.test.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="51">
-                  <caret line="3" column="2" lean-forward="true" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
+                <state relative-caret-position="561">
+                  <caret line="35" column="5" lean-forward="false" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
                   <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="jims-binance-functions.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/jims-binance-functions.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="308">
-                  <caret line="84" column="59" lean-forward="false" selection-start-line="84" selection-start-column="59" selection-end-line="84" selection-end-column="59" />
-                  <folding>
-                    <element signature="n#!!block;n#getBidAskPrices#0;n#JimsBinanceFunctions#0" expanded="false" />
-                    <marker date="1524586482000" expanded="true" signature="517:946" ph="{...}" />
-                  </folding>
                 </state>
               </provider>
             </entry>
@@ -139,8 +131,8 @@
           <file leaf-file-name="jims-binance-functions.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/jims-binance-functions.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-2348">
-                  <caret line="18" column="17" lean-forward="true" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
+                <state relative-caret-position="2837">
+                  <caret line="187" column="41" lean-forward="false" selection-start-line="187" selection-start-column="21" selection-end-line="187" selection-end-column="41" />
                   <folding>
                     <element signature="n#!!block;n#getBidAskPrices#0;n#JimsBinanceFunctions#0" expanded="false" />
                   </folding>
@@ -163,12 +155,13 @@
       <find>BN</find>
       <find>volume</find>
       <find>app</find>
-      <find>routes</find>
       <find>Get</find>
+      <find>jimsBinanceBot</find>
+      <find>routes</find>
     </findStrings>
     <replaceStrings>
-      <replace>priceChange</replace>
       <replace>routes</replace>
+      <replace>priceChange</replace>
       <replace>this</replace>
     </replaceStrings>
   </component>
@@ -191,11 +184,11 @@
         <option value="$PROJECT_DIR$/template.staging.yml" />
         <option value="$PROJECT_DIR$/routes.js" />
         <option value="$PROJECT_DIR$/tests/test.js" />
-        <option value="$PROJECT_DIR$/tests/jims-binance-functions.integration.test.js" />
         <option value="$PROJECT_DIR$/template.yml" />
         <option value="$PROJECT_DIR$/serverless.yml" />
-        <option value="$PROJECT_DIR$/src/routes/empty-route.js" />
         <option value="$PROJECT_DIR$/src/jims-binance-functions.js" />
+        <option value="$PROJECT_DIR$/tests/jims-binance-functions.integration.test.js" />
+        <option value="$PROJECT_DIR$/src/routes/empty-route.js" />
       </list>
     </option>
   </component>
@@ -217,9 +210,9 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="220" />
+    <option name="x" value="130" />
     <option name="y" value="23" />
-    <option name="width" value="1460" />
+    <option name="width" value="1550" />
     <option name="height" value="958" />
   </component>
   <component name="ProjectView">
@@ -386,15 +379,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1524017342836</updated>
-      <workItem from="1524017355382" duration="47543000" />
+      <workItem from="1524017355382" duration="48513000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47543000" />
+    <option name="totallyTimeSpent" value="48513000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="220" y="23" width="1460" height="958" extended-state="0" />
+    <frame x="130" y="23" width="1550" height="958" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -405,7 +398,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="GhcMod" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18688293" sideWeight="0.49434572" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17572944" sideWeight="0.49434572" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Cabal" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2496474" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -541,14 +534,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/jims-binance-functions.integration.test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="2" lean-forward="true" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/template.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="431">
@@ -565,21 +550,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/jims-binance-functions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2837">
+          <caret line="187" column="41" lean-forward="false" selection-start-line="187" selection-start-column="21" selection-end-line="187" selection-end-column="41" />
+          <folding>
+            <element signature="n#!!block;n#getBidAskPrices#0;n#JimsBinanceFunctions#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/routes/empty-route.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+        <state relative-caret-position="357">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/jims-binance-functions.js">
+    <entry file="file://$PROJECT_DIR$/tests/jims-binance-functions.integration.test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2348">
-          <caret line="18" column="17" lean-forward="true" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
-          <folding>
-            <element signature="n#!!block;n#getBidAskPrices#0;n#JimsBinanceFunctions#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="561">
+          <caret line="35" column="5" lean-forward="false" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>

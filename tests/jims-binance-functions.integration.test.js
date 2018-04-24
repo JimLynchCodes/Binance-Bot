@@ -4,15 +4,15 @@
  *
  */
 const expect = require('chai').expect;
-const JismBinanceFunctions = require('./../src/jims-binance-functions');
+const jimsBinanceFunctions = require('./../src/jims-binance-functions');
 
 
 describe('Binance Functions', function () {
 
   describe('getPrice', () => {
 
-    xit('should get a price for Bitcoin to USD.', () => {
-      const jimsBinanceFunctions = new JismBinanceFunctions();
+    xit('should get a price for Binance Bucks to Bitcoin.', () => {
+      // const jimsBinanceFunctions = new JimsBinanceFunctions();
       jimsBinanceFunctions.getCandles('BNBBTC').then(result => {
         expect(result).to.not.equal(null);
         expect(isNaN(parseFloat(result))).to.be.false;
@@ -20,19 +20,32 @@ describe('Binance Functions', function () {
       });
     })
 
-      it('should get prev day data for Bitcoin to USD.', (done) => {
+    xit('should get prev day data for Binance Bucks to Bitcoin.', (done) => {
 
-        const jimsBinanceFunctions = new JismBinanceFunctions();
-        jimsBinanceFunctions.getPrevDayData('BNBBTC').then(result => {
+      // const jimsBinanceFunctions = new JimsBinanceFunctions();
+      jimsBinanceFunctions.getPrevDayData('BNBBTC').then(result => {
 
-          console.log('it resolved!');
+        expect(result).to.not.equal(null);
 
-          expect(result).to.not.equal(null);
+        done();
+
+      });
+
+    }).timeout(4000);
+
+    xit('should get get a recommendation object for Binance Bucks to Bitcoin.', (done) => {
+
+      // const jimsBinanceFunctions = new JimsBinanceFunctions();
+      jimsBinanceFunctions.getRecommendation('BNBBTC').then(result => {
+
+        console.log('got a recommendation!');
+
+        expect(result).to.not.equal(null);
 
 
-          done();
+        done();
 
-        });
+      });
 
     }).timeout(4000);
 
