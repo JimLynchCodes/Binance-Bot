@@ -32,7 +32,7 @@ Resources:
     Properties:
       AutoPublishAlias: devers
       Handler: index.handler
-      Runtime: nodejs8.10
+      Runtime: nodejs6.10
       Environment:
         Variables:
           NODE_ENV: !Ref 'Environment'
