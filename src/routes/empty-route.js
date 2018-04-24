@@ -20,6 +20,8 @@ function readEnvVariables(req) {
 
 module.exports = function (req, res) {
 
+  console.log('in the empty route!');
+
   const JimsBinanceFunctions = require('./../jims-binance-functions');
   this.jimsBinanceBot = new JimsBinanceFunctions();
 
@@ -34,6 +36,7 @@ module.exports = function (req, res) {
 
     'application/json': () => {
       return this.jimsBinanceBot.getRecommendation('BNBBTC').then(recommendation => {
+        console.log('got recommendation');
         res.json(recommendation);
       });
       // res.send({message: 'hey'});
