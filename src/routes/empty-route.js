@@ -18,7 +18,7 @@ module.exports = function (req, res) {
 
   console.log('getting recommendation...');
 
-  this.jimsBinanceBot.getRecommendation('BNBBTC').then(recommendation => {
+  jimsBinanceBot.getRecommendation('BNBBTC').then(recommendation => {
     console.log('got recommendation');
     res.json(recommendation);
   });
