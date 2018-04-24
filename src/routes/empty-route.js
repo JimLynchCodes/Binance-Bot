@@ -1,32 +1,47 @@
-module.exports = function (req, res) {
+function readEnvVariables(req) {
 
-  const JimsBinanceFunctions = require('./../jims-binance-functions');
-  routes.jimsBinanceBot = new JimsBinanceFunctions();
+  // console.log('query is: ', req.query);
+  // console.log('process.env is: ', process.env);
+  // console.log('gateway is: ', req.apiGateway);
 
-  console.log('query is: ', req.query);
-  console.log('process.env is: ', process.env);
-  console.log('gateway is: ', req.apiGateway);
-
-  routes.lambdaParams = {};
+  this.lambdaParams = {}
 
   if (req.apiGateway) {
-    routes.lambdaParams = Object.assign({}, routes.lambdaParams, req.apiGateway.event)
+    this.lambdaParams = Object.assign({}, this.lambdaParams, req.apiGateway.event)
   }
 
   if (req.query) {
-    routes.lambdaParams = Object.assign({}, routes.lambdaParams, req.query)
+    this.lambdaParams = Object.assign({}, this.lambdaParams, req.query)
   }
 
+  return lambdaParams;
+}
+
+
+module.exports = function (req, res) {
+
+  const JimsBinanceFunctions = require('./../jims-binance-functions');
+  this.jimsBinanceBot = new JimsBinanceFunctions();
+
+  this.lambdaParams = readEnvVariables(req);
+
   res.set({
-    'Content-Type': 'routeslication/json',
+    'Content-Type': 'application/json',
     'charset': 'utf-8'
   });
 
-  return routes.jimsBinanceBot.getPrevDayData('BNBBTC').then(binanceData => {
-    console.log('binance data is: ' + binanceData);
-    res.send(binanceData);
-  }, err => {
-    res.send(err);
+  res.format({
+
+    'application/json': () => {
+      return this.jimsBinanceBot.getRecommendation('BNBBTC').then(recommendation => {
+        res.json(recommendation);
+      });
+      // res.send({message: 'hey'});
+    }
+
   });
 
+
 }
+
+
