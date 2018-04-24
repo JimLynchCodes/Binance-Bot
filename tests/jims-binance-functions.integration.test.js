@@ -33,7 +33,7 @@ describe('Binance Functions', function () {
 
     }).timeout(4000);
 
-    xit('should get get a recommendation object for Binance Bucks to Bitcoin.', (done) => {
+    it('should get get a recommendation object for Binance Bucks to Bitcoin.', (done) => {
 
       // const jimsBinanceFunctions = new JimsBinanceFunctions();
       jimsBinanceFunctions.getRecommendation('BNBBTC').then(result => {

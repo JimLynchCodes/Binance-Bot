@@ -10,16 +10,12 @@ const axios = require('axios');
 const errorResponse = {'error': 'Please pass query parameter "character" with a value 0 - 10.'};
 const binance = require('node-binance-api');
 const AWS = require('aws-sdk');
-const jimsBinanceFunctions = require('./../src/jims-binance-functions');
-
 
 class JimsBinanceFunctions {
 
   constructor() {
 
     AWS.config.update({region: 'us-east-1'});
-
-    console.log('in binance bot constructor', jimsBinanceFunctions)
 
     binance.options({
       APIKEY: '<key>',

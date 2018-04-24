@@ -1,5 +1,5 @@
 const jimsBinanceBot = require('./../jims-binance-functions');
-const readEnvVariables = require('./readEnvVariables');
+const readEnvVariables = require('./../utils/readEnvVariables');
 
 
 module.exports = function (req, res) {
