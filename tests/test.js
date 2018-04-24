@@ -2,9 +2,9 @@
 
 const supertest = require('supertest'); 
 const test = require('unit.js');
-const app = require('../app.js');
+const emptyRouteHandler = require('../src/routes/empty-route.js');
 
-const request = supertest(app);
+const request = supertest(emptyRouteHandler);
 
 describe('Tests app', function() {
   it('verifies get', function(done) {

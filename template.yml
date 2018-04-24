@@ -35,7 +35,7 @@ Resources:
       Runtime: nodejs8.10
       Environment:
         Variables:
-          NODE_ENV: dev
+          NODE_ENV: !Ref 'Environment'
       Role:
         Fn::ImportValue:
           !Join ['-', [!Ref 'ProjectId', !Ref 'AWS::Region', 'LambdaTrustRole']]
