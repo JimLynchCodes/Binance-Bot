@@ -1,6 +1,6 @@
 module.exports = function (req, res) {
 
-  const JimsBinanceFunctions = require('./src/jims-binance-functions');
+  const JimsBinanceFunctions = require('./../jims-binance-functions');
   routes.jimsBinanceBot = new JimsBinanceFunctions();
 
   console.log('query is: ', req.query);
