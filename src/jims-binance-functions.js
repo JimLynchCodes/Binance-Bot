@@ -124,22 +124,22 @@ class JimsBinanceFunctions {
       let recommendationObj= { }
 
       recommendationObj['ticker'] = ticker;
+
       recommendationObj.volume = {
         volumePastOneminute: 24,
         volumePastFiveminute: 24,
-        volumePastOneday: 24,
+        volumePastOneday: prevDayData.volume,
         normalizedVolumePastOneminute: 24,
         normalizedVolumePastFiveminute: 24,
         normalizedVolumePastOneday: 24
       };
 
-      recommendationObj.priceChange = {
+      recommendationObj.price = {
         priceChangePastOneminute: 24,
         priceChangePastFiveminute: 24,
-        priceChangePastOneday: 24,
         normalizedPriceChangePastOneminute: 24,
         normalizedPriceChangePastFiveminute: 24,
-        normalizedPriceChangePastOneday: 24
+        weightedAvgPrice24hr: prevDayData.weightedAvgPrice
       };
 
 
