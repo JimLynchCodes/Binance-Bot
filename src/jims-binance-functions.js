@@ -1,4 +1,4 @@
-'use strict';
+
 /**
  *  @author Jim Lynch <jim@wisdomofjim.com
  *
@@ -11,6 +11,7 @@ const errorResponse = {'error': 'Please pass query parameter "character" with a 
 // const creds = require('./../.creds');
 const binance = require('node-binance-api');
 // const AWS = require('aws-sdk');
+const AWS = require('aws-sdk');
 
 
 class JimsBinanceFunctions {
@@ -18,11 +19,11 @@ class JimsBinanceFunctions {
   constructor() {
 
 
-    const AWS = require('aws-sdk');
+
     AWS.config.update({region: 'us-east-1'});
     // const encrypted = process.env['b_key'];
-    let decrypted;
 
+    console.log('in binance bot constructor', AWS)
 
     binance.options({
       APIKEY: '<key>',
@@ -199,4 +200,5 @@ class JimsBinanceFunctions {
 
 }
 
-module.exports = JimsBinanceFunctions;
+
+module.exports = new JimsBinanceFunctions();

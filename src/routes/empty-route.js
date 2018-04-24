@@ -1,4 +1,4 @@
-const JimsBinanceFunctions = require('./../jims-binance-functions');
+const jimsBinanceBot = require('./../jims-binance-functions');
 
 function readEnvVariables(req) {
 
@@ -24,8 +24,6 @@ module.exports = function (req, res) {
 
   console.log('in the empty route!');
   console.log('JimsBinanceFunctions ', JimsBinanceFunctions);
-
-  let jimsBinanceBot = new JimsBinanceFunctions();
 
   console.log('jimsBinanceBot', jimsBinanceBot);
   this.lambdaParams = readEnvVariables(req);
