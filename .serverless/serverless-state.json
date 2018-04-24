@@ -106,7 +106,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/binance-bot-impatient-deploy/dev/1524582999415-2018-04-24T15:16:39.415Z/binance-bot-impatient-deploy.zip"
+                "S3Key": "serverless/binance-bot-impatient-deploy/dev/1524584535508-2018-04-24T15:42:15.508Z/binance-bot-impatient-deploy.zip"
               },
               "FunctionName": "binance-bot-impatient-deploy-dev-hello",
               "Handler": "index.handler",
@@ -125,14 +125,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "HelloLambdaVersion4KOGn6t380nRUmhMAxXVCmy6AQO3LdT1yhSKw2wBNI": {
+          "HelloLambdaVersion0bxCvdP0rXGNW2km9JsGWxQwYwkSP3J60S4foJWRE": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "HelloLambdaFunction"
               },
-              "CodeSha256": "4KOG/n6t380nRUmhMAxXVCmy6AQO3LdT1yhSKw2wBNI="
+              "CodeSha256": "0bxC+vdP0rXG/NW2km9JsGWxQwYwkSP3J60S4foJWRE="
             }
           }
         },
@@ -145,7 +145,7 @@
           "HelloLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "HelloLambdaVersion4KOGn6t380nRUmhMAxXVCmy6AQO3LdT1yhSKw2wBNI"
+              "Ref": "HelloLambdaVersion0bxCvdP0rXGNW2km9JsGWxQwYwkSP3J60S4foJWRE"
             }
           }
         }
@@ -180,7 +180,7 @@
     "artifact": "/Users/jameslynch/Git-Projects/Binance-Bot/.serverless/binance-bot-impatient-deploy.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/binance-bot-impatient-deploy/dev/1524582999415-2018-04-24T15:16:39.415Z",
+    "artifactDirectoryName": "serverless/binance-bot-impatient-deploy/dev/1524584535508-2018-04-24T15:42:15.508Z",
     "artifact": "binance-bot-impatient-deploy.zip"
   }
 }

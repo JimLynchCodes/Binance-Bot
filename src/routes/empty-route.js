@@ -23,10 +23,11 @@ function readEnvVariables(req) {
 module.exports = function (req, res) {
 
   console.log('in the empty route!');
+  console.log('JimsBinanceFunctions ', JimsBinanceFunctions);
 
-  this.jimsBinanceBot = new JimsBinanceFunctions();
+  let jimsBinanceBot = new JimsBinanceFunctions();
 
-  // console.log('jimsBinanceBot', jimsBinanceBot);
+  console.log('jimsBinanceBot', jimsBinanceBot);
   this.lambdaParams = readEnvVariables(req);
   console.log('lambdaParams', this.lambdaParams);
 
