@@ -15,7 +15,7 @@ const binance = require('node-binance-api');
 
 class JimsBinanceFunctions {
 
-  constructor(symbols) {
+  constructor() {
 
 
     const AWS = require('aws-sdk');
