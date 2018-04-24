@@ -44,14 +44,45 @@ class JimsBinanceFunctions {
   };
 
 
+  /**
+   *
+   *   Remember, the candle endpoint returns the data that you would use to build a candlestick chart.
+   *   ie. data for each minute on the minute of the hour (or less frequent if desired).
+   *
+   * @param tickerName
+   * @param timeInterval
+   * @returns {Promise}
+   *
+   *  Reasponse:
+   *
+   *  [
+        [
+           1499040000000,      // Open time
+           "0.01634790",       // Open
+           "0.80000000",       // High
+           "0.01575800",       // Low
+           "0.01577100",       // Close
+           "148976.11427815",  // Volume
+           1499644799999,      // Close time
+           "2434.19055334",    // Quote asset volume
+           308,                // Number of trades
+           "1756.87402397",    // Taker buy base asset volume
+           "28.46694368",      // Taker buy quote asset volume
+           "17928899.62484339" // Ignore
+        ]
+      ]
+   *
+   *
+   *
+   */
   // Intervals: 1m,3m,5m,15m,30m,1h,2h,4h,6h,8h,12h,1d,3d,1w,1M
   getCandles(tickerName, timeInterval = "1m") {
     console.log('getting candles...')
     return new Promise((resolve, reject) => {
       return binance.candlesticks(tickerName, timeInterval, (error, ticks, symbol) => {
-        console.log("candlesticks()", ticks);
+        // console.log("candlesticks()", ticks);
         return resolve(ticks)
-      }, {limit: 50, endTime: (new Date()).getTime()});
+      }, {limit: 3, endTime: (new Date()).getTime()});
     })
   };
 
@@ -71,23 +102,7 @@ class JimsBinanceFunctions {
     binance.websockets.candlesticks(['BNBBTC'], "1m", (candlesticks) => {
       let {e:eventType, E:eventTime, s:symbol, k:ticks} = candlesticks;
       let {o:open, h:high, l:low, c:close, v:volume, n:trades, i:interval, x:isFinal, q:quoteVolume, V:buyVolume, Q:quoteBuyVolume} = ticks;
-      console.log(symbol + " " + interval + " candlestick update");
-      console.log("open: " + open);
-      console.log("high: " + high);
-      console.log("low: " + low);
-      console.log("close: " + close);
-      console.log("volume: " + volume);
-      console.log("isFinal: " + isFinal);
     });
-  }
-
-
-  getWeightedAvgVolFromCandles(candles) {
-
-
-    console.log('length of candles is: ', candles.length);
-
-    return 42;
   }
 
   getPriceChangeFromCandles(candles) {
@@ -102,42 +117,37 @@ class JimsBinanceFunctions {
     ]).then( (values) => {
 
 
+      let recommendationObj= { }
+      recommendationObj['ticker'] = ticker;
+
       let prevDayData = values[0];
       let candles1Min = values[1];
       let candles5Min = values[2];
-
-      console.log(typeof prevDayData);
-      console.log('oh yeah');
-
-
-      let recommendationObj= { }
-
-      recommendationObj['ticker'] = ticker;
-
-      let volPast1Min = this.getWeightedAvgVolFromCandles(candles1Min);
-      let volPast5Min = this.getWeightedAvgVolFromCandles(candles5Min);
-      let priceChangePast1Min = this.getPriceChangeFromCandles(candles1Min);
-      let priceChangePast5Min = this.getPriceChangeFromCandles(candles5Min);
+      // let vol1Min = candles1Min[candles.length - 2][5];
+      // let vol5Min = candles5Min[candles.length - 2][5];
+      // let priceChangePast1Min = candles1Min[candles.length - 2][4] - candles1Min[candles.length - 2][1];;
+      // let priceChangePast5Min = candles5Min[candles.length - 2][4] - candles5Min[candles.length - 2][1];;
 
       recommendationObj.volume = {
-        volumePastOneMinute: volPast1Min,
-        volumePastFiveMinute: volPast5Min,
+        volumePastOneMinute: candles1Min[candles1Min.length - 2][5],
+        volumePastFiveMinute: candles5Min[candles5Min.length - 2][5],
         volumePastOneday: prevDayData.volume,
-        normalizedVolumePastOneMinute: volPast1Min,
-        normalizedVolumePastFiveMinute: volPast5Min / 5,
+        normalizedVolumePastOneMinute: candles1Min[candles1Min.length - 2][5] / 1,
+        normalizedVolumePastFiveMinute: candles5Min[candles5Min.length - 2][5] / 5,
         normalizedVolumePastOneday: prevDayData.volume / 24 / 60
       };
 
       recommendationObj.price = {
-        priceChangePastOneMinute: priceChangePast1Min,
-        priceChangePastFiveMinute: priceChangePast5Min,
-        normalizedPriceChangePastOneMinute: priceChangePast1Min,
-        normalizedPriceChangePastFiveMinute: priceChangePast5Min / 5,
+        priceChangePast1min: candles1Min[candles1Min.length - 2][4] - candles1Min[candles1Min.length - 2][1],
+        priceChangePast5min: candles5Min[candles5Min.length - 2][4] - candles5Min[candles5Min.length - 2][1],
+        normalizedPriceChange1min: candles1Min[candles1Min.length - 2][4] - candles1Min[candles1Min.length - 2][1],
+        normalizedPriceChange5min: (candles5Min[candles5Min.length - 2][4] - candles5Min[candles5Min.length - 2][1]) / 5,
+        priceChange24hr: prevDayData.priceChange,
+        highLowDiff24hr: prevDayData.highPrice - prevDayData.lowPrice,
         weightedAvgPrice24hr: prevDayData.weightedAvgPrice
       };
 
-
-      recommendationObj.reccomendation = {
+      recommendationObj.recommendation = {
         toBuyOrNotToBuy: "Don\'t Buy",
         volumeHeatRating: "Hot",
         volumeRatio1minTo1day: recommendationObj.volume.normalizedVolumePastOneMinute /
@@ -146,8 +156,7 @@ class JimsBinanceFunctions {
                                recommendationObj.volume.normalizedVolumePastOneDay,
         volumeRatio1minTo5min: recommendationObj.volume.normalizedVolumePastOneMinute /
                                recommendationObj.volume.normalizedVolumePastFiveMinute,
-      }
-
+      };
 
       return recommendationObj;
     });
