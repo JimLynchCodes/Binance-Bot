@@ -1,3 +1,5 @@
+const JimsBinanceFunctions = require('./../jims-binance-functions');
+
 function readEnvVariables(req) {
 
   // console.log('query is: ', req.query);
@@ -22,7 +24,6 @@ module.exports = function (req, res) {
 
   console.log('in the empty route!');
 
-  const JimsBinanceFunctions = require('./../jims-binance-functions');
   this.jimsBinanceBot = new JimsBinanceFunctions();
 
   console.log('jimsBinanceBot', jimsBinanceBot);

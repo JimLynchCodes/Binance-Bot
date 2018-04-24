@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dab5599c-674d-45f7-a73a-c76fe98ff8b4" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.serverless/cloudformation-template-update-stack.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.serverless/serverless-state.json" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.serverless/binance-bot-impatient-deploy.zip" afterPath="$PROJECT_DIR$/.serverless/binance-bot-impatient-deploy.zip" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/routes/empty-route.js" afterPath="$PROJECT_DIR$/src/routes/empty-route.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -61,8 +64,8 @@
           <file leaf-file-name="empty-route.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/routes/empty-route.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="581">
-                  <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+                <state relative-caret-position="408">
+                  <caret line="24" column="37" lean-forward="true" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
                   <folding />
                 </state>
               </provider>
@@ -91,7 +94,7 @@
           <file leaf-file-name="jims-binance-functions.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/jims-binance-functions.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="408">
+                <state relative-caret-position="2482">
                   <caret line="146" column="38" lean-forward="false" selection-start-line="146" selection-start-column="38" selection-end-line="146" selection-end-column="38" />
                   <folding>
                     <element signature="n#!!block;n#getBidAskPrices#0;n#JimsBinanceFunctions#0" expanded="false" />
@@ -162,14 +165,14 @@
       <find>res</find>
       <find>BN</find>
       <find>volume</find>
-      <find>routes</find>
       <find>Get</find>
       <find>app</find>
+      <find>routes</find>
     </findStrings>
     <replaceStrings>
       <replace>priceChange</replace>
-      <replace>this</replace>
       <replace>routes</replace>
+      <replace>this</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -386,12 +389,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1524017342836</updated>
-      <workItem from="1524017355382" duration="43724000" />
+      <workItem from="1524017355382" duration="43920000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43724000" />
+    <option name="totallyTimeSpent" value="43920000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="48" y="23" width="1632" height="958" extended-state="0" />
@@ -567,7 +570,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/jims-binance-functions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
+        <state relative-caret-position="2482">
           <caret line="146" column="38" lean-forward="false" selection-start-line="146" selection-start-column="38" selection-end-line="146" selection-end-column="38" />
           <folding>
             <element signature="n#!!block;n#getBidAskPrices#0;n#JimsBinanceFunctions#0" expanded="false" />
@@ -577,8 +580,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/routes/empty-route.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="581">
-          <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+        <state relative-caret-position="408">
+          <caret line="24" column="37" lean-forward="true" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
           <folding />
         </state>
       </provider>
