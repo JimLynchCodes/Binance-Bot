@@ -10,16 +10,6 @@ Parameters:
   Environment:
       Type: String
       Description: AWS CodeStar projectID used to associate new resources to team members
-  publish:
-      Type: String
-      Description: AWS CodeStar projectID used to associate new resources to team members
-  Publish:
-      Type: String
-      Description: AWS CodeStar projectID used to associate new resources to team members
-  Nonce:
-      Description: Change this string when code is updated.
-      Type: String
-      Default: "Test"
 
 Resources:
   LambdaVersion:
@@ -28,9 +18,9 @@ Resources:
         FunctionName : arn:aws:lambda:us-east-1:954459734159:function:awscodestar-binance-bot-lambda-HelloWorld-16Q9TC43G164R
   HelloWorld:
     Type: AWS::Serverless::Function
-    Description: 'a funky func'
+    Description: 'binance bot endpoint'
     Properties:
-      AutoPublishAlias: devers
+      AutoPublishAlias: live
       Handler: index.handler
       Runtime: nodejs6.10
       Environment:
@@ -45,9 +35,3 @@ Resources:
           Properties:
             Path: /
             Method: get
-        PostEvent:
-          Type: Api
-          Properties:
-            Path: /
-            Method: post
-
