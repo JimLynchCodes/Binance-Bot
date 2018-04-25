@@ -1,4 +1,3 @@
-
 /**
  *  @author Jim Lynch <jim@wisdomofjim.com
  *
@@ -53,26 +52,24 @@ class JimsBinanceFunctions {
    * @param timeInterval
    * @returns {Promise}
    *
-   *  Reasponse:
+   *  Response:
    *
    *  [
-        [
-           1499040000000,      // Open time
-           "0.01634790",       // Open
-           "0.80000000",       // High
-           "0.01575800",       // Low
-           "0.01577100",       // Close
-           "148976.11427815",  // Volume
-           1499644799999,      // Close time
-           "2434.19055334",    // Quote asset volume
-           308,                // Number of trades
-           "1756.87402397",    // Taker buy base asset volume
-           "28.46694368",      // Taker buy quote asset volume
-           "17928899.62484339" // Ignore
-        ]
-      ]
-   *
-   *
+   [
+   1499040000000,      // Open time
+   "0.01634790",       // Open
+   "0.80000000",       // High
+   "0.01575800",       // Low
+   "0.01577100",       // Close
+   "148976.11427815",  // Volume
+   1499644799999,      // Close time
+   "2434.19055334",    // Quote asset volume
+   308,                // Number of trades
+   "1756.87402397",    // Taker buy base asset volume
+   "28.46694368",      // Taker buy quote asset volume
+   "17928899.62484339" // Ignore
+   ]
+   ]
    *
    */
   // Intervals: 1m,3m,5m,15m,30m,1h,2h,4h,6h,8h,12h,1d,3d,1w,1M
@@ -105,28 +102,19 @@ class JimsBinanceFunctions {
     });
   }
 
-  getPriceChangeFromCandles(candles) {
-    return 42;
-  }
-
   getRecommendation(ticker) {
     return Promise.all([
       this.getPrevDayData(ticker),
       this.getCandles(ticker, "1m"),
       this.getCandles(ticker, "5m")
-    ]).then( (values) => {
+    ]).then((values) => {
 
-
-      let recommendationObj= { }
+      let recommendationObj = {}
       recommendationObj['ticker'] = ticker;
 
       let prevDayData = values[0];
       let candles1Min = values[1];
       let candles5Min = values[2];
-      // let vol1Min = candles1Min[candles.length - 2][5];
-      // let vol5Min = candles5Min[candles.length - 2][5];
-      // let priceChangePast1Min = candles1Min[candles.length - 2][4] - candles1Min[candles.length - 2][1];;
-      // let priceChangePast5Min = candles5Min[candles.length - 2][4] - candles5Min[candles.length - 2][1];;
 
       recommendationObj.volume = {
         volumePastOneMinute: candles1Min[candles1Min.length - 2][5],
@@ -151,11 +139,11 @@ class JimsBinanceFunctions {
         toBuyOrNotToBuy: "Don\'t Buy",
         volumeHeatRating: "Hot",
         volumeRatio1minTo1day: recommendationObj.volume.normalizedVolumePastOneMinute /
-                               recommendationObj.volume.normalizedVolumePastOneDay,
+        recommendationObj.volume.normalizedVolumePastOneDay,
         volumeRatio5minTo1day: recommendationObj.volume.normalizedVolumePastFiveMinute /
-                               recommendationObj.volume.normalizedVolumePastOneDay,
+        recommendationObj.volume.normalizedVolumePastOneDay,
         volumeRatio1minTo5min: recommendationObj.volume.normalizedVolumePastOneMinute /
-                               recommendationObj.volume.normalizedVolumePastFiveMinute,
+        recommendationObj.volume.normalizedVolumePastFiveMinute,
       };
 
       return recommendationObj;
