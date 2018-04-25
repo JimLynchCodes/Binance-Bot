@@ -1,4 +1,4 @@
-# Jim's Binance Bot
+# Jim's Binance Bot 
 
 This is a project that exposes a api that tries to see when volume for a coin is spiking up
 and based on that give you a strength of recommendation to buy (and potentially at some point automatically buy).
