@@ -1,13 +1,11 @@
-Welcome to the AWS CodeStar sample web service
-==============================================
+# Jim's Binance Bot
 
-This sample code helps get you started with a simple Express web service
-deployed by AWS CloudFormation to AWS Lambda and Amazon API Gateway.
+This is a project that exposes a api that tries to see when volume for a coin is spiking up
+and based on that give you a strength of recommendation to buy (and potentially at some point automatically buy).
 
-What's Here
------------
+## What's Here
 
-This sample includes:
+This project was scaffolded with AWS CodeStar and includes these files:
 
 * README.md - this file
 * buildspec.yml - this file is used by AWS CodeBuild to package your
@@ -18,17 +16,11 @@ This sample includes:
   by AWS CloudFormation to deploy your service to AWS Lambda and Amazon API
   Gateway.
 * tests/ - this directory contains unit tests for your application
+* jims-binance-functions.js - This is the real meat of this project. It's basically a local
+ wrapper that uses node-binance-api library to get data and then transforms it.
 
 
-What Do I Do Next?
-------------------
-
-If you have checked out a local copy of your repository you can start making
-changes to the sample code.  We suggest making a small change to app.js first,
-so you can see how changes pushed to your project's repository are automatically
-picked up by your project pipeline and deployed to AWS Lambda and Amazon API Gateway.
-(You can watch the pipeline progress on your AWS CodeStar project dashboard.)
-Once you've seen how that works, start developing your own code, and have fun!
+## Usage
 
 To run your tests locally, go to the root directory of the
 sample code and run the `npm test` command, which
@@ -38,6 +30,8 @@ To test your new code during the release process, modify the existing tests or
 add tests to the tests directory. AWS CodeBuild will run the tests during the
 build stage of your project pipeline. You can find the test results
 in the AWS CodeBuild console.
+
+## Helpful Links
 
 Learn more about AWS CodeBuild and how it builds and tests your application here:
 https://docs.aws.amazon.com/codebuild/latest/userguide/concepts.html
@@ -55,11 +49,3 @@ AWS CodeStar User Guide:
 http://docs.aws.amazon.com/codestar/latest/userguide/welcome.html
 
 AWS CodeStar Forum: https://forums.aws.amazon.com/forum.jspa?forumID=248
-
-What Should I Do Before Running My Project in Production?
-------------------
-
-AWS recommends you review the security best practices recommended by the framework
-author of your selected sample application before running it in production. You
-should also regularly review and apply any available patches or associated security
-advisories for dependencies used within your application.
