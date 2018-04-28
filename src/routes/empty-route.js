@@ -4,6 +4,9 @@ const readEnvVariables = require('./../utils/readEnvVariables');
 
 module.exports = function (req, res) {
 
+  console.log(req);
+  console.log('req is', JSON.stringify(req));
+
   console.log('in the empty route!!!!');
 
   this.lambdaParams = readEnvVariables(req);
