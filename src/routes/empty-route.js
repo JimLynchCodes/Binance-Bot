@@ -8,7 +8,7 @@ module.exports = function (req, res) {
 
   this.lambdaParams = readEnvVariables(req);
 
-  console.log('lambdaParams tickers re: ' + this.lambdaParams.tickers);
+  console.log('lambdaParams tickers eere: ' + this.lambdaParams.tickers);
 
   if (this.lambdaParams.tickers) {
     console.log('and it has length: ' + this.lambdaParams.tickers.length)
