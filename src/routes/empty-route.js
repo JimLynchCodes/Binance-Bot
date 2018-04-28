@@ -8,7 +8,11 @@ module.exports = function (req, res) {
 
   this.lambdaParams = readEnvVariables(req);
 
-  console.log('lambdaParams are: ' + this.lambdaParams);
+  console.log('lambdaParams tickers re: ' + this.lambdaParams.tickers);
+
+  if (this.lambdaParams.tickers) {
+    console.log('and it has length: ' + this.lambdaParams.tickers.length)
+  }
 
   res.set({
     'Content-Type': 'application/json',
