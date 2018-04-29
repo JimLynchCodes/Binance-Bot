@@ -25,6 +25,7 @@ Resources:
     Description: 'a funky func'
     Properties:
 #      AutoPublishAlias: late
+      FunctionName: !Ref FunctionName
       Handler: index.handler
       Runtime: nodejs6.10
       Environment:
