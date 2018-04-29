@@ -6,7 +6,7 @@
  */
 
 const awsServerlessExpress = require('aws-serverless-express')
-const routes = require('./routes')
-const server = awsServerlessExpress.createServer(routes)
+const app = require('./app')
+const server = awsServerlessExpress.createServer(app)
 
 exports.handler = (event, context) => awsServerlessExpress.proxy(server, event, context);

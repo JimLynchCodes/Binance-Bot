@@ -117,22 +117,30 @@ class JimsBinanceFunctions {
       let candles5Min = values[2];
 
       recommendationObj.volume = {
-        volumePastOneMinute: candles1Min[candles1Min.length - 2][5],
-        volumePastFiveMinute: candles5Min[candles5Min.length - 2][5],
-        volumePastOneday: prevDayData.volume,
+        volumePastOneMinute: parseFloat(candles1Min[candles1Min.length - 2][5]),
+        volumePastFiveMinute: parseFloat(candles5Min[candles5Min.length - 2][5]),
+        volumePastOneDay: parseFloat(prevDayData.volume),
         normalizedVolumePastOneMinute: candles1Min[candles1Min.length - 2][5] / 1,
         normalizedVolumePastFiveMinute: candles5Min[candles5Min.length - 2][5] / 5,
-        normalizedVolumePastOneday: prevDayData.volume / 24 / 60
+        normalizedVolumePastOneDay: parseFloat(prevDayData.volume) / 24 / 60
       };
+
+      console.log('doing  math')
+      console.log('a ', recommendationObj.volume.normalizedVolumePastFiveMinute);
+      console.log('b ', recommendationObj.volume.normalizedVolumePastOneDay);
+      let g = recommendationObj.volume.normalizedVolumePastFiveMinute /
+      recommendationObj.volume.normalizedVolumePastOneDay;
+      console.log('c ', g);
+
 
       recommendationObj.price = {
         priceChangePast1min: candles1Min[candles1Min.length - 2][4] - candles1Min[candles1Min.length - 2][1],
         priceChangePast5min: candles5Min[candles5Min.length - 2][4] - candles5Min[candles5Min.length - 2][1],
         normalizedPriceChange1min: candles1Min[candles1Min.length - 2][4] - candles1Min[candles1Min.length - 2][1],
         normalizedPriceChange5min: (candles5Min[candles5Min.length - 2][4] - candles5Min[candles5Min.length - 2][1]) / 5,
-        priceChange24hr: prevDayData.priceChange,
+        priceChange24hr: parseFloat(prevDayData.priceChange),
         highLowDiff24hr: prevDayData.highPrice - prevDayData.lowPrice,
-        weightedAvgPrice24hr: prevDayData.weightedAvgPrice
+        weightedAvgPrice24hr: parseFloat(prevDayData.weightedAvgPrice)
       };
 
       recommendationObj.recommendation = {
