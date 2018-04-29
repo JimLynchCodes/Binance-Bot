@@ -10,17 +10,20 @@ Parameters:
   Environment:
       Type: String
       Description: AWS CodeStar projectID used to associate new resources to team members
+  FunctionName:
+      Type: String
+      Description: the AWS arn identitfier for the lambda function corresponding to each environment.
 
 Resources:
-#  LambdaVersion:
-#      Type: "AWS::Lambda::Version"
-#      Properties:
-#        FunctionName : !Join ['-', [CodeStar-Binance-Bot', !Ref 'Environment']]
+  LambdaVersion:
+      Type: "AWS::Lambda::Version"
+      Properties:
+        FunctionName: !Ref functionName
   BinanceBot:
     Type: AWS::Serverless::Function
     Description: 'a funky func'
     Properties:
-#      AutoPublishAlias: devers
+      AutoPublishAlias: late
       Handler: index.handler
       Runtime: nodejs6.10
       Environment:
