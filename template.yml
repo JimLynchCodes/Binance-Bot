@@ -21,7 +21,7 @@ Resources:
         FunctionName: !Ref FunctionName
   BinanceBot:
     Type: AWS::Serverless::Function
-    DeletionPolicy: 'Delete'
+    DeletionPolicy: 'Retain'
     Description: 'a funky func'
     Properties:
       AutoPublishAlias: late
