@@ -167,6 +167,7 @@ class JimsBinanceFunctions {
     })
   };
 
+  // adding some codez
 
   // getMarketDepth(ticker)
 
