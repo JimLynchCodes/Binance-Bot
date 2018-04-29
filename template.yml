@@ -20,7 +20,7 @@ Resources:
     Type: AWS::Serverless::Function
     Description: 'a funky func'
     Properties:
-      AutoPublishAlias: devers
+#      AutoPublishAlias: devers
       Handler: index.handler
       Runtime: nodejs6.10
       Environment:
