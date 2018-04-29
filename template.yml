@@ -12,10 +12,10 @@ Parameters:
       Description: AWS CodeStar projectID used to associate new resources to team members
 
 Resources:
-  LambdaVersion:
-      Type: "AWS::Lambda::Version"
-      Properties:
-        FunctionName : !Join ['-', [CodeStar-Binance-Bot', !Ref 'Environment']]
+#  LambdaVersion:
+#      Type: "AWS::Lambda::Version"
+#      Properties:
+#        FunctionName : !Join ['-', [CodeStar-Binance-Bot', !Ref 'Environment']]
   BinanceBot:
     Type: AWS::Serverless::Function
     Description: 'a funky func'
