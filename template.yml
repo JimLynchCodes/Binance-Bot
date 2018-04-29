@@ -15,16 +15,16 @@ Parameters:
       Description: the AWS arn identitfier for the lambda function corresponding to each environment.
 
 Resources:
-  LambdaVersion:
-      Type: "AWS::Lambda::Version"
-      Properties:
-        FunctionName: !Ref FunctionName
+#  LambdaVersion:
+#      Type: "AWS::Lambda::Version"
+#      Properties:
+#        FunctionName: !Ref FunctionName
   BinanceBot:
     Type: AWS::Serverless::Function
     DeletionPolicy: 'Retain'
     Description: 'a funky func'
     Properties:
-      AutoPublishAlias: late
+#      AutoPublishAlias: late
       Handler: index.handler
       Runtime: nodejs6.10
       Environment:
