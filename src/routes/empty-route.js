@@ -103,7 +103,7 @@ module.exports = function (req, res) {
       console.log(result);
       respond(res, JSON.stringify(sorted, null, 3))
     }, errors => {
-      console.log('errors: ' + errors);
+      console.log('errors: ' + JSON.stringify(errors));
     })
 
 
